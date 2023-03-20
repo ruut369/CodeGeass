@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.ico" />
+    <title>geass博客</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        nav ul {
+            overflow: hidden;
+            position: fixed;
+            width: 100%;
+            background: linear-gradient(90deg, pink, rgb(182, 255, 255));
+            z-index: 4;
+        }
+
+        nav ul a li {
+            float: left;
+            list-style: none;
+            padding: 20px;
+            font-size: 20px;
+            color: aliceblue;
+
+        }
+
+        nav ul a li:hover {
+            background-color: skyblue;
+        }
+
+        #welcome-section {
+            height: 979px;
+            background: linear-gradient(90deg, rgb(88, 175, 236), rgb(182, 255, 255))
+        }
+
+        #welcome-section>div {
+            position: relative;
+            text-align: center;
+            padding-top: calc(979px / 2);
+        }
+
+        section div h1 {
+            position: relative;
+            font-size: 40px;
+            color: #f0f0f0;
+            z-index: 3;
+        }
+
+        section div h1 em {
+            display: inline-block;
+            font-style: normal;
+            white-space: nowrap;
+            overflow: hidden;
+            /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+            animation: em 2s steps(22) forwards;
+        }
+
+        @keyframes em {
+            0% {
+                width: 0%;
+            }
+
+            100% {
+                width: 410px;
+            }
+        }
+
+        /* @keyframes em2 {
+            0% {
+                overflow: hidden;
+                width: 0%;
+                color: transparent;
+            }
+
+            100% {
+                width: 218px;
+            }
+        } */
+
+        #welcome-section div h3 {
+            position: relative;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: 300;
+            color: darkgreen;
+            z-index: 3;
+        }
+
+        /* #welcome-section div h3 em {
+            display: inline-block;
+            font-style: normal;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: em2 2s steps(22) 2s forwards;
+
+        } */
+
+        #welcome-section div .bear {
+            position: absolute;
+            top: calc(979px - 100px);
+            left: 0;
+            width: 200px;
+            height: 100px;
+            background: url(media/bear.png);
+            animation: bear .5s steps(8) infinite, move 3s linear forwards;
+            z-index: 2;
+        }
+
+        #welcome-section div .bg1 {
+            position: absolute;
+            top: calc(979px - 336px);
+            width: 100%;
+            height: 336px;
+            background: url(media/bg1.png);
+            animation: bg1 15s linear infinite;
+            z-index: 1;
+        }
+
+        #welcome-section div .bg2 {
+            position: absolute;
+            top: calc(979px - 569px);
+            width: 100%;
+            height: 569px;
+            background: url(media/bg2.png);
+            animation: bg2 100s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes bear {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: -1600px 0;
+            }
+        }
+
+        @keyframes move {
+            0% {
+                left: 0;
+            }
+
+            100% {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes bg1 {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        @keyframes bg2 {
+            0% {
+                background-position: 0 0;
+            }
+
+            100% {
+                background-position: 100% 0;
+            }
+        }
+
+        #projects {
+            height: 1200px;
+            text-align: center;
+            background: linear-gradient(90deg, rgb(177, 109, 188), rgb(182, 255, 255))
+        }
+
+        section .project-tile {
+            display: inline-block;
+            color: #f0f0f0;
+            margin-top: 60px;
+            font-size: 26px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        section .big_box {
+            overflow: hidden;
+
+            width: 1280px;
+            margin: auto;
+            margin-top: 20px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .big_box ul li {
+            float: left;
+            height: 460px;
+            width: 400px;
+            margin: 0 40px 40px 0;
+
+
+        }
+
+        .big_box ul li:nth-child(3n) {
+            margin-right: 0px;
+        }
+
+        .big_box ul li img {
+            width: 400px;
+            height: 391px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: all .5s;
+        }
+
+        .big_box ul li a {
+            text-decoration: none;
+            color: #f0f0f0;
+        }
+
+        .big_box ul li a h3 {
+            height: 69px;
+            line-height: 69px;
+            background-color: aquamarine;
+        }
+
+        .big_box ul li:hover img {
+            transform: translate3d(0, -10px, 0);
+            box-shadow: 0 0 10px #f0f0f0;
+        }
+
+        .big_box ul li:hover h3 {
+            color: darkorange;
+        }
+
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?afdfe0');
+            src: url('fonts/icomoon.eot?afdfe0#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?afdfe0') format('truetype'),
+                url('fonts/icomoon.woff?afdfe0') format('woff'),
+                url('fonts/icomoon.svg?afdfe0#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        section>a {
+            position: relative;
+            display: inline-block;
+            text-decoration: none;
+            padding-right: 30px;
+            width: 146px;
+            height: 49px;
+            line-height: 49px;
+            color: darkgray;
+            background-color: aqua;
+            border-radius: 5px;
+            transition: all .7s;
+
+        }
+
+        section>a span {
+            position: absolute;
+            display: inline-block;
+            font-family: icomoon;
+            top: 1px;
+            right: 30px;
+            height: 48px;
+            font-size: 20px;
+            color: darkgray;
+            background-color: aqua;
+            transition: all .7s;
+
+        }
+
+        section>a:hover {
+            color: darkorange;
+            background-color: bisque;
+            font-size: 18px;
+        }
+
+        section>a:hover span {
+            color: darkorange;
+            background-color: bisque;
+            right: 15px;
+            font-size: 22px;
+        }
+
+        article div {
+            height: 800px;
+            background-color: darksalmon;
+            text-align: center;
+            padding-top: 300px;
+        }
+
+        article div h1 {
+            font-size: 40px;
+        }
+
+        article div h3 {
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        article div ul {
+            display: block;
+            width: 600px;
+            height: 100px;
+            margin: 25px auto;
+        }
+
+        article div ul li {
+            color: black;
+            font-family: icomoon;
+            float: left;
+            width: 100px;
+            height: 50px;
+            padding-top: 20px;
+            font-weight: 700;
+            margin-left: 20px;
+            transition: all .7s;
+        }
+
+        article div ul .fa::before {
+
+            content: '\ea90';
+        }
+
+        article div ul .gi::before {
+
+            content: '\eab2';
+        }
+
+        article div ul .tw::before {
+
+            content: '\ea98';
+        }
+
+        article div ul .te::before {
+
+            content: '\e90a';
+        }
+
+        article div ul .wh::before {
+
+            content: '\ea93';
+        }
+
+        article div ul li:hover {
+            padding-top: 0;
+        }
+
+        footer {
+            height: 120px;
+            background-color: darkgray;
+            border-top: 2px solid;
+        }
+
+        footer p {
+            text-align: center;
+            padding-top: 50px;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- nav模块start -->
+    <nav id="navbar">
+        <ul>
+            <a href="#welcome-section">
+                <li>About</li>
+            </a>
+            <a href="#projects">
+                <li>Work</li>
+            </a>
+            <a href="#contact">
+                <li>Contact</li>
+            </a>
+        </ul>
+    </nav>
+    <!-- nav模块end -->
+    <!-- 欢迎模块start -->
+    <section id="welcome-section">
+        <div>
+            <h1> <em>Hey I am CodeGeass</em></h1>
+            <h3> <em>a Rookie web developer</em></h3>
+            <div class="bg2"></div>
+            <div class="bg1"></div>
+            <div class="bear"></div>
+        </div>
+    </section>
+    <!-- 欢迎模块end -->
+    <!-- 作品展示start -->
+    <section id="projects">
+        <h1 class="project-tile">These are some of my projects</h1>
+        <div class="big_box">
+            <ul>
+
+                <li><a href="https://www.freecodecamp.org/chinese/learn/2022/responsive-web-design/learn-intermediate-css-by-building-a-picasso-painting/step-89"
+                        target="_blank">
+                        <img src="images/Snipaste_2023-03-05_11-07-17.png" alt="">
+                        <h3>创建一副毕加索绘画来学习中级 CSS</h3>
+                    </a>
+                </li>
+
+                <li><a href="https://www.freecodecamp.org/chinese/learn/2022/responsive-web-design/learn-responsive-web-design-by-building-a-piano/step-33"
+                        target="_blank">
+                        <img src="images/Snipaste_2023-03-05_11-08-56.png" alt="">
+                        <h3>通过创建一架钢琴来学习响应式网页设计</h3>
+                    </a>
+                </li>
+
+                <li><a href="https://www.freecodecamp.org/chinese/learn/2022/responsive-web-design/learn-css-variables-by-building-a-city-skyline/step-118"
+                        target="_blank">
+                        <img src="images/Snipaste_2023-03-05_11-09-17.png" alt="">
+                        <h3>通过建立城市轮廓学习 CSS 变量</h3>
+                    </a>
+                </li>
+
+                <li><a href="https://www.freecodecamp.org/chinese/learn/2022/responsive-web-design/learn-css-animation-by-building-a-ferris-wheel/step-29"
+                        target="_blank">
+                        <img src="images/Snipaste_2023-03-05_11-10-00.png" alt="">
+                        <h3>通过构建摩天轮学习 CSS 动画</h3>
+                    </a>
+                </li>
+
+                <li><a href="https://www.freecodecamp.org/chinese/learn/2022/responsive-web-design/learn-css-transforms-by-building-a-penguin/step-104"
+                        target="_blank">
+                        <img src="images/Snipaste_2023-03-05_11-10-19.png" alt="">
+                        <h3>通过构建企鹅来学习 CSS 变换</h3>
+                    </a>
+                </li>
+
+                <li><a href="https://www.freecodecamp.org/chinese/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form"
+                        target="_blank">
+                        <img src="images/Snipaste_2023-03-05_11-11-07.png" alt="">
+                        <h3>编写一个用于收集用户数据的调查表单</h3>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+        <a href="https://www.freecodecamp.org/chinese/fcc7592a319-7cb8-4ce4-b34c-6fe8e37950cf" id="profile-link"
+            target="_blank">show
+            all <span></span> </a>
+    </section>
+    <!-- 作品展示end -->
+    <!-- 联系方式start -->
+    <article id="contact">
+        <div>
+            <h1>Let's work together...</h1>
+            <h3>How do you take your coffee?</h3>
+            <ul>
+                <a href="#">
+                    <li class="fa">Facebook </li>
+                </a>
+                <a href="#">
+                    <li class="gi">GitHub </li>
+                </a>
+                <a href="#">
+                    <li class="tw">Twitter </li>
+                </a>
+                <a href="#">
+                    <li class="te">Tencentqq</li>
+                </a>
+                <a href="#">
+                    <li class="wh">Whatsapp </li>
+                </a>
+            </ul>
+        </div>
+    </article>
+    <!-- 联系方式end -->
+    <footer>
+        <p>**This is just a fake portfolio. All the projects and contact details given are not real!</p>
+    </footer>
+</body>
+
+</html>
