@@ -371,6 +371,60 @@
             padding-top: 50px;
             color: red;
         }
+
+        #welcome-section [class^="heart"] {
+            position: absolute;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+            width: 100px;
+            height: 150px;
+            border-radius: 50%;
+            box-shadow: 0 0 20px crimson;
+            background-color: crimson;
+
+        }
+
+        #welcome-section .heart-left {
+            transform: translateX(-50%) rotate(-50deg);
+            border-bottom-left-radius: 5%;
+            animation: heart 1s infinite;
+        }
+
+        #welcome-section .heart-right {
+            transform: translateX(-0%) rotate(50deg);
+            border-bottom-right-radius: 5%;
+            animation: heart2 1s infinite;
+        }
+
+        @keyframes heart {
+            0% {
+                transform: translateX(-50%) rotate(-50deg) scale(1);
+            }
+
+            50% {
+                transform: translateX(-50%) rotate(-50deg) scale(1.2);
+                box-shadow: 0 0 30px crimson;
+            }
+
+            100% {
+                transform: translateX(-50%) rotate(-50deg) scale(1);
+            }
+        }
+
+        @keyframes heart2 {
+            0% {
+                transform: translateX(0) rotate(50deg) scale(1);
+            }
+
+            50% {
+                transform: translateX(10%) rotate(50deg) scale(1.2);
+            }
+
+            100% {
+                transform: translateX(0) rotate(50deg) scale(1);
+            }
+        }
     </style>
 </head>
 
@@ -393,6 +447,8 @@
     <!-- 欢迎模块start -->
     <section id="welcome-section">
         <div>
+            <div class="heart-left"></div>
+            <div class="heart-right"></div>
             <h1> <em>Hey I am CodeGeass</em></h1>
             <h3> <em>a Rookie web developer</em></h3>
             <div class="bg2"></div>
